@@ -1,6 +1,6 @@
 import { CheckIcon } from "../../../icons/CheckIcon";
 import type { IDropDownItem } from './drop-down-item.types';
-import styles from "../multi-select-drop-down/MultiSelectDropDwon.module.scss";
+import styles from "./DropDownItem.module.scss";
 
 const DropdownItem: React.FC<IDropDownItem> = ({ options, isSelected, toggleOption }) => {
     return (
