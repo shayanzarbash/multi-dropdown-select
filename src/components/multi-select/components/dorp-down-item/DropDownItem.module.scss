@@ -1,0 +1,79 @@
+.dropdown {
+    max-width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid $color-border-dropdown;
+    border-radius: $border-radius-main;
+    background: $color-white;
+    box-shadow: $box-shadow-dropdown;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    margin: 0;
+    padding: $spacing-size-x-large $spacing-size-thin $spacing-size-x-large $spacing-size-x-large;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $color-scrollbar-thumb transparent;
+
+    &::-webkit-scrollbar {
+        width: $spacing-size-normal;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-scrollbar-thumb;
+        border-radius: $border-radius-main;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none;
+        height: 0;
+    }
+}
+
+.option {
+    padding: $spacing-size-x-large $spacing-size-xxx-large;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size-base;
+    border-radius: $border-radius-item;
+    transition: background-color $transition-default;
+    margin-bottom: $spacing-size-normal;
+
+    span {
+        color: $color-text-default;
+    }
+
+    &:hover {
+        background-color: $color-bg-hover;
+    }
+}
+
+.noOption {
+    padding: $spacing-size-x-large $spacing-size-xxx-large;
+    text-align: left;
+    font-size: $font-size-base;
+
+    span {
+        color: $color-text-default;
+    }
+}
+
+.selected {
+    background: $color-bg-selected;
+    font-weight: 500;
+    color: $color-primary;
+
+    .name {
+        color: $color-primary;
+    }
+}
+
+.check {
+    font-size: $font-size-base;
+    height: $height-size-normal;
+}
