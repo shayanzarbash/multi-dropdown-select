@@ -1,4 +1,4 @@
-import { MultiSelect } from './components/multi-select/MultiSelect'
+import { MultiSelectDropDwon } from './components/multi-select/components/multi-select-drop-down/MultiSelectDropDwon'
 
 function App() {
 
@@ -18,7 +18,10 @@ function App() {
 
   return (
     <>
-      <MultiSelect items={items} />
+      <MultiSelectDropDwon
+        items={items}
+        placeholder='Select or add items...'
+      />
     </>
   )
 }

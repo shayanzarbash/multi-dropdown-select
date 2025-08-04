@@ -8,4 +8,5 @@ export interface IOption {
 export interface IMultiSelectProps {
     items: IOption[];
     placeholder?: string;
+    defaultSelected?: IOption[];
 }
