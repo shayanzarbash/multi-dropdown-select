@@ -1,0 +1,8 @@
+@mixin transition($properties, $duration: 0.2s, $ease: ease) {
+    transition: $properties $duration $ease;
+}
+
+@mixin fade-opacity($opacity, $duration: 0.2s) {
+    opacity: $opacity;
+    @include transition(opacity, $duration);
+}

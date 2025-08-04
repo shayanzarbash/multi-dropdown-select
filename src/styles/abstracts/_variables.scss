@@ -1,0 +1,34 @@
+//Colors
+$color-white: #ffffff;
+$color-primary: #2684FF;
+$color-primary-light: rgba(38, 132, 255, 0.2);
+$color-border-default: #c3dafe;
+$color-border-dropdown: #e2e8f0;
+$color-text-default: #444444;
+$color-text-muted: #777777;
+$color-text-selected: #3b5bdb;
+$color-bg-selected: #e8f0ff;
+$color-bg-hover: #f5f8ff;
+$color-bg-red : #e00;
+$color-scrollbar-thumb: #d0d0d0;
+
+//Sizes
+$border-radius-main: 10px;
+$border-radius-item: 8px;
+$font-size-base: 14px;
+$spacing-size-thin: 2px;
+$spacing-size-small: 4px;
+$spacing-size-normal: 6px;
+$spacing-size-large: 8px;
+$spacing-size-x-large: 10px;
+$spacing-size-xx-large: 12px;
+$spacing-size-xxx-large: 14px;
+$height-size-normal: 20px;
+$height-size-large: 24px;
+
+//Shadows
+$box-shadow-focus: 0 0 0 4px $color-primary-light;
+$box-shadow-dropdown: 0 4px 8px rgba(0, 0, 0, 0.06);
+
+//transition
+$transition-default: 0.2s ease;
