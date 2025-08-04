@@ -32,9 +32,9 @@ export const MultiSelectDropDwon: React.FC<IMultiSelectProps> = ({
 
     useEffect(() => {
         if (inputRef.current) {
-          inputRef.current.focus();
+            inputRef.current.focus();
         }
-      }, []);
+    }, []);
 
     const toggleOption = (option: IOption) => {
         const exists = selected.find((item) => item.value === option.value);
@@ -75,7 +75,7 @@ export const MultiSelectDropDwon: React.FC<IMultiSelectProps> = ({
                 const newItem = {
                     label: inputValue,
                     value: inputValue,
-                    icon: "",
+                    icon: getRandomEmoji(),
                 };
                 setOptions((prev) => [...prev, newItem]);
                 setSelected((prev) => [...prev, newItem]);
@@ -92,6 +92,13 @@ export const MultiSelectDropDwon: React.FC<IMultiSelectProps> = ({
     const resetInput = () => {
         setInputValue("");
         setIsOpen(false);
+    };
+
+    const emojiList = ["🌟", "🔥", "🚀", "💡", "🎯", "🍀", "🎉", "💎", "⚡", "🌈"];
+
+    const getRandomEmoji = () => {
+        const randomIndex = Math.floor(Math.random() * emojiList.length);
+        return emojiList[randomIndex];
     };
 
     return (
