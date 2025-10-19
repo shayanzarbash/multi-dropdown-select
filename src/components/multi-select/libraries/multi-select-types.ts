@@ -9,4 +9,6 @@ export interface IMultiSelectProps {
     items: IOption[];
     placeholder?: string;
     defaultSelected?: IOption[];
+    onChange: (newValue: IOption[]) => void,
+    value: IOption[]
 }

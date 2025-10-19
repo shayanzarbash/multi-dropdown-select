@@ -8,7 +8,9 @@ import type { IMultiSelectProps, IOption } from '../../libraries/multi-select-ty
 export const MultiSelectDropDwon: React.FC<IMultiSelectProps> = ({
     items,
     placeholder,
-    defaultSelected
+    defaultSelected,
+    onChange,
+    value
 }) => {
     const [selected, setSelected] = useState<IOption[]>(defaultSelected || []);
     const [isOpen, setIsOpen] = useState(false);
@@ -37,16 +39,16 @@ export const MultiSelectDropDwon: React.FC<IMultiSelectProps> = ({
     }, []);
 
     const toggleOption = (option: IOption) => {
-        const exists = selected.find((item) => item.value === option.value);
+        const exists = value.find((item) => item.value === option.value);
         if (exists) {
-            setSelected(selected.filter((item) => item.value !== option.value));
+            onChange(value.filter((item) => item.value !== option.value));
         } else {
-            setSelected([...selected, option]);
+            onChange([...value, option]);
         }
     };
 
     const isSelected = (option: IOption) =>
-        selected.some((item) => item.value === option.value);
+        value.some((item) => item.value === option.value);
 
     const filteredOptions = options.filter(opt =>
         opt.label.toLowerCase().includes(inputValue.toLowerCase())
@@ -62,7 +64,7 @@ export const MultiSelectDropDwon: React.FC<IMultiSelectProps> = ({
         valueToRemove: string
     ) => {
         e.stopPropagation();
-        setSelected(prev => prev.filter(item => item.value !== valueToRemove));
+        onChange(value.filter((item) => item.value !== valueToRemove));
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -78,9 +80,9 @@ export const MultiSelectDropDwon: React.FC<IMultiSelectProps> = ({
                     icon: getRandomEmoji(),
                 };
                 setOptions((prev) => [...prev, newItem]);
-                setSelected((prev) => [...prev, newItem]);
+                onChange([...value, newItem]);
             } else if (!isSelected(exists)) {
-                setSelected((prev) => [...prev, exists]);
+                onChange([...value, exists]);
             }
 
             resetInput();
@@ -109,7 +111,7 @@ export const MultiSelectDropDwon: React.FC<IMultiSelectProps> = ({
                 tabIndex={0}
             >
                 <div className={styles.selectedContainer}>
-                    {selected.map((s) => (
+                    {value.map((s) => (
                         <span key={s.value} className={styles.selectedItem}>
                             {s.label}
                             <button

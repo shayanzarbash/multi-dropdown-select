@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { MultiSelectDropDwon } from './components/multi-select/components/multi-select-drop-down/MultiSelectDropDwon'
+import type { IOption } from './components/multi-select/libraries/multi-select-types';
 
 function App() {
 
@@ -16,11 +18,17 @@ function App() {
     { label: "Travel", value: "travel", icon: "✈️" },
   ];
 
+  const [selected, setSelected] = useState<IOption[]>([]);
+
+
+
   return (
     <>
       <MultiSelectDropDwon
         items={items}
         placeholder='Select or add items...'
+        onChange={(newValue) => setSelected(newValue)}
+        value={selected}
       />
     </>
   )
